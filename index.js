@@ -13,9 +13,13 @@ dotenv.config();
 const app = express();
 
 // CORS configuration
+const corsOptions = {
+    origin: ['http://localhost:5173', 'https://frontend-six-gamma-52.vercel.app'],
+    credentials: true // Allow credentials to be sent with requests
+};
 
-// Apply CORS middleware before any routes
-app.use(cors());
+// Apply CORS middleware
+app.use(cors(corsOptions));
 
 // Middleware
 app.use(express.json());
