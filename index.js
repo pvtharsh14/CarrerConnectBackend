@@ -15,8 +15,9 @@ const app= express();
  app.use(cookieParser());
 
 
+
  const corsOptions = {
-    origin:'http://localhost:5173',
+    origin:['http://localhost:5173','https://frontend-six-gamma-52.vercel.app'],
     credentials:true
 }
 
