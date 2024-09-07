@@ -13,21 +13,16 @@ dotenv.config();
 const app = express();
 
 // CORS configuration
-const corsOptions = {
-    origin: ['http://localhost:5173', 'https://frontend-six-gamma-52.vercel.app'],
-    credentials: true // Allow credentials to be sent with requests
-};
 
 // Apply CORS middleware before any routes
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Optional: Handle preflight requests explicitly (for clarity)
-app.options('*', cors(corsOptions)); // Preflight request handler
+
 
 // Routes
 app.use('/api/v1/user', userRoute);
